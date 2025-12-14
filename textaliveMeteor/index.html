@@ -1,15 +1,27 @@
 <!doctype html>
 <html>
   <head>
+    <link rel="stylesheet" href="src\style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Textalive - Meteor</title>
   </head>
   <body>
-    <div id="toolbar"></div>
-    <div id="media"></div>
-    <div id="lyric-app">
+  <div id="lyric-app">
       <div id="text"></div>
+      <div id="media"></div>
+      <div id="info">
+        <span id="song-name"></span>
+        <span id="song-producer"></span>
+      </div>
+    </div>
+    <div id="toolbar">
+      <button id="play-button">Play</button>
+      <button id="pause-button" >Pause</button>
+      <button id="restart-button">Restart</button>
     </div>
     <script type="module" src="/src/main.js"></script>
   </body>

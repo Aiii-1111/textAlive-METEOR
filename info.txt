@@ -9,4 +9,10 @@ Song Links:
     - http://piapro.jp/t/C0lr/20180328201242
 
 Colour Scheme Codes:
-    - 
+    -  #4e54c8 → #8f94fb (Bg gradient)
+    - #4568DC → #B06AB3 (Bg gradient 2)
+
+    - #F7F7FF (text Colour)
+    - #1E1E3A (Toolbar colour)
+    
+

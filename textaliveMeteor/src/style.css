@@ -1,6 +1,14 @@
 html
 {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Zen Maru Gothic", sans-serif;
+  color: #F7F7FF;
+}
+
+button
+{
+  color: #F7F7FF;
+  background-color: #8f94fb;
+  padding: 2px;
 }
 
 #media
@@ -8,4 +16,34 @@ html
   position: fixed;
   bottom: 5%;
   right:5%
+}
+
+#toolbar
+{
+  background-image: linear-gradient(to top, #1E1E3A 75%, #4568DC);
+  height: 10%;
+  padding: 1%;
+}
+
+#lyric-app
+{
+  animation-name: bgGradientAnim;
+  animation-duration: 5000ms;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bgGradientAnim 
+{
+  0% {background-color: #4e54c8;}
+  25% {background-color: #8f94fb;}
+  50% {background-color: #946df4;}
+  75% {background-color: #4e54c8;}
+  100% {background-color: #4e54c8;}
+
+}
+
+@font-face {
+  font-family: "Zen Maru Gothic";
+  src: url("public/ZenMaruGothic-Regular.ttf") format("truetype");
 }
