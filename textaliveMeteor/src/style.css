@@ -52,6 +52,7 @@ button:hover
   border-color: #F7F7FF;
   border-style: solid;
   background-color: #1E1E3A;
+  padding: 1%;
 }
 
 @keyframes bgGradientAnim 

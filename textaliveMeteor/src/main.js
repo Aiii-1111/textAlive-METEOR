@@ -6,7 +6,8 @@ const pause_button = document.querySelector("#pause-button");
 const restart_button = document.querySelector("#restart-button");
 
 const song_name_display = document.querySelector("#song-name");
-const song_producer_display = document.querySelector("#producer-name");
+const song_producer_display = document.querySelector("#song-producer");
+const song_info_display = document.querySelector("#extra-song-info");
 
 play_button.disabled = true;
 pause_button.disabled = true;
@@ -20,7 +21,12 @@ function onAppReady(app)
 
 function onTimerReady(timer)
 {
-    // add button event listeners and enable them
+    //display song info
+    song_name_display.textContent = "Song Name: " + player.data.song.name
+    song_producer_display.textContent = "Producer: " + player.data.song.artist.name;
+    song_info_display.textContent = "Published: " + player.data.song.created_at + " " + player.video.duration;
+
+    //add button event listeners and enable them
     play_button.addEventListener("click", ()=> player.requestPlay());
     pause_button.addEventListener("click", ()=> player.requestPause());
     restart_button.addEventListener("click", ()=> player.requestMediaSeek(0));
