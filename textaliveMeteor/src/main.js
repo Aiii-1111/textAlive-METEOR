@@ -2,8 +2,8 @@ import { Player } from "textalive-app-api";
 
 //Get HTML objects
 const play_button = document.querySelector("#play-button");
-const pause_button = document.querySelector("#play-button");
-const restart_button = document.querySelector("#play-button");
+const pause_button = document.querySelector("#pause-button");
+const restart_button = document.querySelector("#restart-button");
 
 const song_name_display = document.querySelector("#song-name");
 const song_producer_display = document.querySelector("#producer-name");
@@ -13,9 +13,9 @@ pause_button.disabled = true;
 restart_button.disabled = true;
 
 //create methods & listeners
-function OnAppReady(app)
+function onAppReady(app)
 {
-    createFromSongUrl("http://www.nicovideo.jp/watch/sm33334184");
+    player.createFromSongUrl("http://www.nicovideo.jp/watch/sm33334184");
 }
 
 function onTimerReady(timer)
@@ -31,15 +31,15 @@ function onTimerReady(timer)
 
 }
 
-function onTimeUpdate(t)
+function onTimeUpdate(position)
 {
-    const current_word = " ";
+    //const current_word =;
 
     
 }
 
 //Initialise player
 const player = new Player({app:{token:"ToQM0IhgEahcXQEo"},
-mediaElement: document.querySelector("#media")});
+    mediaElement: document.querySelector("#media")});
 
-player.addListener({OnAppReady, onTimerReady, onTimeUpdate});
+player.addListener({onAppReady, onTimerReady, onTimeUpdate});
