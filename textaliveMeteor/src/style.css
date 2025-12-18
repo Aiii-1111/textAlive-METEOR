@@ -21,6 +21,17 @@ button:hover
   background-color: #4568DC;
 }
 
+canvas
+{
+  background-color: rgba(0,0,0,0);
+  position: absolute;
+  top: 10%;
+  left: 1%;
+  width: 95vw;
+  height: 85vh;
+  outline: 2px solid red;/*testing*/
+}
+
 #toolbar
 {
   background-image: linear-gradient(to top, #1E1E3A 75%, #4568DC);
@@ -28,12 +39,13 @@ button:hover
   padding: 1%;
 }
 
-#lyric-app
+#lyric-app-bg
 {
   height: 90vh;
   animation-name: bgGradientAnim;
   animation-duration: 5000ms;
   animation-iteration-count: infinite;
+  z-index: -1;
 }
 
 #media

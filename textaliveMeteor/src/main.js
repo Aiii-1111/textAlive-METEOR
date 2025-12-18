@@ -1,6 +1,7 @@
 import { Player } from "textalive-app-api";
+import p5 from "p5";
 
-//Get HTML objects
+//get HTML objects
 const play_button = document.querySelector("#play-button");
 const pause_button = document.querySelector("#pause-button");
 const restart_button = document.querySelector("#restart-button");
@@ -13,7 +14,7 @@ play_button.disabled = true;
 pause_button.disabled = true;
 restart_button.disabled = true;
 
-//create methods & listeners
+//create methods & listeners for textalive player
 function onAppReady(app)
 {
     player.createFromSongUrl("http://www.nicovideo.jp/watch/sm33334184");
@@ -24,7 +25,7 @@ function onTimerReady(timer)
     //display song info
     song_name_display.textContent = "Song Name: " + player.data.song.name
     song_producer_display.textContent = "Producer: " + player.data.song.artist.name;
-    song_info_display.textContent = "Published: " + player.data.song.created_at + " " + player.video.duration;
+    song_info_display.textContent = "Published: " + player.data.song.created_at + " (" + player.video.duration + "ms)";
 
     //add button event listeners and enable them
     play_button.addEventListener("click", ()=> player.requestPlay());
@@ -44,7 +45,12 @@ function onTimeUpdate(position)
     
 }
 
-//Initialise player
+//methods for drawing with p5
+function setup()
+{
+}
+
+//initialise player
 const player = new Player({app:{token:"ToQM0IhgEahcXQEo"},
     mediaElement: document.querySelector("#media")});
 
