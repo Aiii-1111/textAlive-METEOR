@@ -1,7 +1,7 @@
 export default {
     server:
     {
-        allowedHosts: true, //[".ngrok-free.app"],
+        allowedHosts: [".ngrok-free.app"], //[".ngrok-free.app"],true
         cors: true,
     }
-}
+};

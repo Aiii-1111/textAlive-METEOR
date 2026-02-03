@@ -23,13 +23,13 @@ button:hover
 
 canvas
 {
-  background-color: rgba(0,0,0,0);
   position: absolute;
   top: 10%;
   left: 1%;
   width: 95vw;
   height: 85vh;
   outline: 2px solid red;/*testing*/
+  background-color: rgba(0,0,0,0);/*testing*/
 }
 
 #toolbar
@@ -48,11 +48,22 @@ canvas
   z-index: -1;
 }
 
+#text
+{
+  position: absolute;
+  top: 10%;
+  left: 1%;
+  z-index: 6;  
+  font-size: 100px;
+
+}
+
 #media
 {
   position: fixed;
   bottom: 5%;
-  right:5%
+  right: 5%;
+  z-index: 6;
 }
 
 #info
@@ -65,6 +76,7 @@ canvas
   border-style: solid;
   background-color: #1E1E3A;
   padding: 1%;
+  z-index: 6;
 }
 
 @keyframes bgGradientAnim 

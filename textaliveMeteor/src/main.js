@@ -1,4 +1,5 @@
 import { Player } from "textalive-app-api";
+import { s } from "/src/sketch.js";
 import p5 from "p5";
 
 //get HTML objects
@@ -9,6 +10,8 @@ const restart_button = document.querySelector("#restart-button");
 const song_name_display = document.querySelector("#song-name");
 const song_producer_display = document.querySelector("#song-producer");
 const song_info_display = document.querySelector("#extra-song-info");
+
+const nowText = document.querySelector("#text");
 
 play_button.disabled = true;
 pause_button.disabled = true;
@@ -25,7 +28,7 @@ function onTimerReady(timer)
     //display song info
     song_name_display.textContent = "Song Name: " + player.data.song.name
     song_producer_display.textContent = "Producer: " + player.data.song.artist.name;
-    song_info_display.textContent = "Published: " + player.data.song.created_at + " (" + player.video.duration + "ms)";
+    song_info_display.textContent = "Published: " + player.data.song.created_at + " (" + player.video.duration/1000 + "s)";
 
     //add button event listeners and enable them
     play_button.addEventListener("click", ()=> player.requestPlay());
@@ -40,15 +43,12 @@ function onTimerReady(timer)
 
 function onTimeUpdate(position)
 {
-    //const current_word =;
-
-    
+    const current_word = player.video.findWord(player.timer.position)?.text;
+    current_word && (nowText.textContent = current_word);    
 }
 
-//methods for drawing with p5
-function setup()
-{
-}
+//initalise p5 sketch
+let p5sketch = new p5(s);
 
 //initialise player
 const player = new Player({app:{token:"ToQM0IhgEahcXQEo"},

@@ -18,3 +18,5 @@ Colour Scheme Codes:
     - #1E1E3A (Toolbar colour)
     
 
+emojis:
+    -⭐🌟✨
