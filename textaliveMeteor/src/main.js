@@ -11,7 +11,7 @@ const song_name_display = document.querySelector("#song-name");
 const song_producer_display = document.querySelector("#song-producer");
 const song_info_display = document.querySelector("#extra-song-info");
 
-const nowText = document.querySelector("#text");
+const current_text_display = document.querySelector("#text");
 
 play_button.disabled = true;
 pause_button.disabled = true;
@@ -43,8 +43,9 @@ function onTimerReady(timer)
 
 function onTimeUpdate(position)
 {
+    //get current word & update html
     const current_word = player.video.findWord(player.timer.position)?.text;
-    current_word && (nowText.textContent = current_word);    
+    current_word && (current_text_display.textContent = current_word);    
 }
 
 //initalise p5 sketch

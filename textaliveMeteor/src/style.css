@@ -28,8 +28,8 @@ canvas
   left: 1%;
   width: 95vw;
   height: 85vh;
-  outline: 2px solid red;/*testing*/
-  background-color: rgba(0,0,0,0);/*testing*/
+  /*outline: 2px solid red;/*testing*/
+  /*background-color: rgba(0,0,0,0);/*testing*/
 }
 
 #toolbar
