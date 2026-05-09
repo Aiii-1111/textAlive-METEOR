@@ -87,7 +87,14 @@ canvas
   50% {background-color: #946df4;}
   75% {background-color: #4e54c8;}
   100% {background-color: #4e54c8;}
+}
 
+@keyframes chorusBgAnim 
+{
+  0% {background-color: #EF476F;}
+  33% {background-color: #89AAE6;}
+  67% {background-color: #46237A;}
+  100% {background-color: #EF476F;}
 }
 
 @font-face 

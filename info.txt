@@ -7,12 +7,17 @@ App Token:
 Song Links:
     - http://www.nicovideo.jp/watch/sm33334184
     - http://piapro.jp/t/C0lr/20180328201242
+    - https://songle.jp/songs/piapro.jp%2Ft%2FC0lr%2F20180328201242
 
 Colour Scheme Codes:
     - #4e54c8
     - #8f94fb (Bg gradient)
     - #4568DC
     - #B06AB3 
+
+    - #EF476F
+    - #89AAE6 (bg gradient 2)
+    - #46237A
 
     - #F7F7FF (text Colour)
     - #1E1E3A (Toolbar colour)
@@ -26,3 +31,4 @@ Useful docs/tutorials:
         -https://deepwiki.com/TextAliveJp/textalive-app-api/7-advanced-usage
     
     - https://p5js.org/tutorials/data-structure-garden/
+    

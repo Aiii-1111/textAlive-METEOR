@@ -17,9 +17,6 @@ play_button.disabled = true;
 pause_button.disabled = true;
 restart_button.disabled = true;
 
-
-let current_position;
-
 //create methods & listeners for textalive player
 function onAppReady(app)
 {
@@ -44,18 +41,33 @@ function onTimerReady(timer)
 
 }
 
-function onTimeUpdate(position)
+function onTimeUpdate(pos)
 {
 
-    //get current word & beat
-    const current_word = player.video.findWord(player.timer.position);
-    
-    //animate
+    //get current word, position & chorus (if applicable)
+    const position = player.timer.position;
+    const current_word = player.video.findWord(position);
+    const chorus = player.findChorus(position)
+    chorus&&(console.log(chorus));
+
+    //animate (text fade in)
     const wordAnim = Ease.cubicOut(current_word.progress(position));
     
     //update text with animations
     current_word && (current_text_display.textContent = current_word?.text);
-    current_text_display.style.opacity = String(wordAnim);    
+    current_text_display.style.opacity = String(wordAnim);
+    
+    //experiment with detecting chorus repetitive segments
+    if(chorus && position > chorus.startTime && position < chorus.endTime )
+    {
+        document.getElementById("lyric-app-bg").style.animation = "chorusBgAnim 3s infinite";
+    }
+    else
+    {
+        document.getElementById("lyric-app-bg").style.animation = "bgGradientAnim 5s infinite";
+    }
+
+
 }
 
 //initalise p5 sketch
