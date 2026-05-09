@@ -43,3 +43,31 @@ export const s = (sketch) =>
 
   }
 };
+
+Animating lyrics textalive (broken)
+
+    //get current word
+    const current_word = player.video.findWord(player.timer.position)?.text;
+    //const current_beat = player.video.findBeat(player.timer.position);
+
+    current_word.animate = (now, unit) =>
+{
+    //overriding the default animation method to animate the current word
+            //now is the current time
+            //unit is the current rendering unit (ie the word)
+
+    //calculate progress from 0 to 1
+    const progress = unit.progress(now);
+
+    //animate
+    const scale = 1 + TextAliveApp.Ease.bounceOut(progress) * 0.5;
+
+    //apply to DOM element
+    current_text_display.textContent = current_word;
+    current_text_display.style.transform = `scale(${scale})`;
+}
+
+    if(current_word)
+    {
+        current_word.animate(now, current_word);
+    }

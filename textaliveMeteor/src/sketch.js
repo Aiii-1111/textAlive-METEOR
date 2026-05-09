@@ -4,10 +4,10 @@ export const s = (sketch) =>
 {
   //initialise variables
   const emoji_lst = ["⭐","🌟","✨"]
-  const n_stars = 5;
+  const n_stars = 7;
   let star_arr = [];
 
-  //function to initialise a star object
+  //update the opacity of a star and replace old invisible stars
   sketch.updateStar = (star_obj,index) =>
   {
     star_obj.alpha -= sketch.random([1,40]);
@@ -24,6 +24,7 @@ export const s = (sketch) =>
     }
   }
 
+  //function to initialise a star object
   sketch.createStar = () =>
   {
     let star = 

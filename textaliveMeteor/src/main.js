@@ -1,4 +1,4 @@
-import { Player } from "textalive-app-api";
+import { Player, Ease} from "textalive-app-api";
 import { s } from "/src/sketch.js";
 import p5 from "p5";
 
@@ -16,6 +16,9 @@ const current_text_display = document.querySelector("#text");
 play_button.disabled = true;
 pause_button.disabled = true;
 restart_button.disabled = true;
+
+
+let current_position;
 
 //create methods & listeners for textalive player
 function onAppReady(app)
@@ -43,9 +46,16 @@ function onTimerReady(timer)
 
 function onTimeUpdate(position)
 {
-    //get current word & update html
-    const current_word = player.video.findWord(player.timer.position)?.text;
-    current_word && (current_text_display.textContent = current_word);    
+
+    //get current word & beat
+    const current_word = player.video.findWord(player.timer.position);
+    
+    //animate
+    const wordAnim = Ease.cubicOut(current_word.progress(position));
+    
+    //update text with animations
+    current_word && (current_text_display.textContent = current_word?.text);
+    current_text_display.style.opacity = String(wordAnim);    
 }
 
 //initalise p5 sketch

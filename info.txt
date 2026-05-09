@@ -20,3 +20,9 @@ Colour Scheme Codes:
 
 emojis:
     -⭐🌟✨
+
+Useful docs/tutorials:
+    - https://deepwiki.com/TextAliveJp/textalive-app-api
+        -https://deepwiki.com/TextAliveJp/textalive-app-api/7-advanced-usage
+    
+    - https://p5js.org/tutorials/data-structure-garden/
