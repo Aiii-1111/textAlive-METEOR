@@ -31,9 +31,11 @@ function onTimerReady(timer)
     song_info_display.textContent = "Published: " + player.data.song.created_at + " (" + player.video.duration/1000 + "s)";
 
     //add button event listeners and enable them
-    play_button.addEventListener("click", ()=> player.requestPlay());
-    pause_button.addEventListener("click", ()=> player.requestPause());
-    restart_button.addEventListener("click", ()=> player.requestMediaSeek(0));
+    play_button.addEventListener("click", ()=> {player.requestPlay()});
+    pause_button.addEventListener("click", ()=> {player.requestPause()});
+    restart_button.addEventListener("click", ()=> {player.requestMediaSeek(0);
+        current_text_display.textContent = "";
+    });
 
     play_button.disabled = false;
     pause_button.disabled = false;
@@ -48,7 +50,7 @@ function onTimeUpdate(pos)
     const position = player.timer.position;
     const current_word = player.video.findWord(position);
     const chorus = player.findChorus(position)
-    chorus&&(console.log(chorus));
+    //chorus&&(console.log(chorus));
 
     //animate (text fade in)
     const wordAnim = Ease.cubicOut(current_word.progress(position));
